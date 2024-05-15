@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    @apply bg-slate-100 text-gray-900 overflow-x-hidden w-screen;
+    @apply text-gray-200 bg-gray-800
+  }
+  
+  .dark{
+    @apply text-gray-200 bg-gradient-to-bl bg-gradient-to-bl from-gray-700 from-30% via-cyan-900 to-70% to-gray-700 to-70%
+  }
+}
+
