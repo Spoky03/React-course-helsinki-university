@@ -51,13 +51,19 @@ export const BlogCard = ({ user, blog, blogRef, handleDelete }) => {
         </>
       </Togglable>
       <div>
-        {user && ( blog.user && (blog.user.username === user.username) ) &&  (
+            <button data-testid="deleteButton"
+            disabled={user && (blog.user && (blog.user.username === user.username)) ? false : true}
+            className={`absolute top-0 right-0 m-1 w-4 rounded-full h-4 bg-red-700 ` + (user && (blog.user && (blog.user.username === user.username)) ? "" : "hidden") }
+            onClick={() => handleDelete(blog._id)}
+            >
+            </button>
+        {/* {user && ( blog.user && (blog.user.username === user.username) ) &&  (
             <button data-testid="deleteButton"
             className="absolute top-0 right-0 m-1 w-4 rounded-full h-4 bg-red-700 "
             onClick={() => handleDelete(blog._id)}
             >
             </button>
-        )}
+        )} */}
       </div>
     </div>
   );
